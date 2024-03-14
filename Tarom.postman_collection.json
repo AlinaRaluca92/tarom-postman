@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "1a1bf16a-50a7-4734-8368-88a7adc76a33",
+		"name": "Tarom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32866707",
+		"_collection_link": "https://dark-shuttle-901486.postman.co/workspace/4e3ac322-2510-4901-b1aa-a03929f2811f/collection/32866707-1a1bf16a-50a7-4734-8368-88a7adc76a33?action=share&source=collection_link&creator=32866707"
+	},
+	"item": [
+		{
+			"name": "flights",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check if the response status is 200 OK\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Check if the response is in JSON format\r",
+							"pm.test(\"Response is JSON\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"// Check if the response contains required keys and values\r",
+							"pm.test(\"Response contains required keys and values\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"    // Check if the response contains 'request' object\r",
+							"    pm.expect(jsonData).to.have.property('request');\r",
+							"\r",
+							"    // Check if the 'request' object contains 'lang' with value 'en'\r",
+							"    pm.expect(jsonData.request).to.have.property('lang', 'en');\r",
+							"\r",
+							"    // Check if the response contains 'response' array with at least one element\r",
+							"    pm.expect(jsonData).to.have.property('response').that.is.an('array').and.not.empty;\r",
+							"    \r",
+							"    // Iterate through each element in the 'response' array and check required keys\r",
+							"    jsonData.response.forEach(function (item) {\r",
+							"        pm.expect(item).to.have.property('hex');\r",
+							"        pm.expect(item).to.have.property('reg_number');\r",
+							"        pm.expect(item).to.have.property('flag');\r",
+							"        pm.expect(item).to.have.property('lat');\r",
+							"        pm.expect(item).to.have.property('lng');\r",
+							"    \r",
+							"        pm.expect(item).to.have.property('dir');\r",
+							"        pm.expect(item).to.have.property('speed');\r",
+							"        pm.expect(item).to.have.property('flight_number');\r",
+							"        pm.expect(item).to.have.property('flight_icao');\r",
+							"        pm.expect(item).to.have.property('flight_iata');\r",
+							"        pm.expect(item).to.have.property('dep_icao');\r",
+							"        pm.expect(item).to.have.property('dep_iata');\r",
+							"        pm.expect(item).to.have.property('arr_icao');\r",
+							"        pm.expect(item).to.have.property('arr_iata');\r",
+							"        pm.expect(item).to.have.property('airline_icao');\r",
+							"        pm.expect(item).to.have.property('airline_iata');\r",
+							"        pm.expect(item).to.have.property('aircraft_icao');\r",
+							"        pm.expect(item).to.have.property('updated');\r",
+							"        pm.expect(item).to.have.property('status');\r",
+							"        pm.expect(item).to.have.property('type');\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/flights?api_key=YOUR-API-KEY",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flights"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "YOUR-API-KEY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Airport",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check if response is valid JSON\r",
+							"pm.test(\"Response is valid JSON\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"// Check response status code\r",
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Check if response contains required fields\r",
+							"pm.test(\"Response contains required fields\", function () {\r",
+							"    const responseBody = pm.response.json();\r",
+							"    pm.expect(responseBody).to.have.property(\"response\").that.is.an(\"array\").and.not.empty;\r",
+							"    const flightInfo = responseBody.response[0];\r",
+							"    \r",
+							"    pm.expect(flightInfo).to.have.property(\"dep_iata\");\r",
+							"    pm.expect(flightInfo).to.have.property(\"arr_iata\");\r",
+							"    pm.expect(flightInfo).to.have.property(\"status\");\r",
+							"    pm.expect(flightInfo).to.have.property(\"dep_time\");\r",
+							"    pm.expect(flightInfo).to.have.property(\"arr_time\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/schedules?dep_iata=MIA&api_key=YOUR-API-KEY",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"schedules"
+					],
+					"query": [
+						{
+							"key": "dep_iata",
+							"value": "MIA"
+						},
+						{
+							"key": "api_key",
+							"value": "YOUR-API-KEY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flight Delay",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body JSON\r",
+							"var responseBody = pm.response.json();\r",
+							"\r",
+							"// Test for the presence of keys in the response object\r",
+							"pm.test(\"Response object has expected keys\", function () {\r",
+							"    pm.expect(responseBody).to.have.property(\"request\");\r",
+							"    pm.expect(responseBody).to.have.property(\"response\");\r",
+							"    pm.expect(responseBody).to.have.property(\"terms\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Alina test\",function() {\r",
+							"    pm.expect(responseBody.request.currency).to.equal(\"USD\");\r",
+							"})\r",
+							"\r",
+							"// Test for the presence of keys in the request object\r",
+							"pm.test(\"Request object has expected keys\", function () {\r",
+							"    pm.expect(responseBody.request).to.have.property(\"lang\");\r",
+							"    \r",
+							"    pm.expect(responseBody.request).to.have.property(\"currency\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"time\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"id\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"server\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"host\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"pid\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"key\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"params\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"version\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"method\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"client\");\r",
+							"    pm.expect(responseBody.request).to.have.property(\"has_more\");\r",
+							"});\r",
+							"\r",
+							"// Test for the presence of keys in the client object\r",
+							"pm.test(\"Client object has expected keys\", function () {\r",
+							"    pm.expect(responseBody.request.client).to.have.property(\"ip\");\r",
+							"    pm.expect(responseBody.request.client).to.have.property(\"geo\");\r",
+							"    pm.expect(responseBody.request.client).to.have.property(\"connection\");\r",
+							"    pm.expect(responseBody.request.client).to.have.property(\"device\");\r",
+							"    pm.expect(responseBody.request.client).to.have.property(\"agent\");\r",
+							"    pm.expect(responseBody.request.client).to.have.property(\"karma\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/delays?delay=31&type=departures&api_key=YOUR-API-KEY",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"delays"
+					],
+					"query": [
+						{
+							"key": "delay",
+							"value": "31"
+						},
+						{
+							"key": "type",
+							"value": "departures"
+						},
+						{
+							"key": "api_key",
+							"value": "YOUR-API-KEY"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

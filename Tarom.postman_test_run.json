@@ -1,0 +1,157 @@
+{
+	"id": "8805da9e-6988-4d79-9678-d773abffe101",
+	"name": "Tarom",
+	"timestamp": "2024-03-14T23:02:05.271Z",
+	"collection_id": "32866707-1a1bf16a-50a7-4734-8368-88a7adc76a33",
+	"folder_id": 0,
+	"environment_id": "32866707-62576748-9f48-4a12-aeed-bb34db488e9f",
+	"totalPass": 10,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-03-14T23:02:04.183Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "08a7c99f-af2c-441b-83c8-2966437918b5",
+			"name": "flights",
+			"url": "https://airlabs.co/api/v9/flights?api_key=YOUR-API-KEY",
+			"time": 159,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is JSON": true,
+				"Response contains required keys and values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains required keys and values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				159
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is JSON": true,
+					"Response contains required keys and values": true
+				}
+			]
+		},
+		{
+			"id": "341cd5af-f1e3-4cfa-883f-c573b8c90694",
+			"name": "Airport",
+			"url": "https://airlabs.co/api/v9/schedules?dep_iata=MIA&api_key=YOUR-API-KEY",
+			"time": 226,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response is valid JSON": true,
+				"Status code is 200 OK": true,
+				"Response contains required fields": true
+			},
+			"testPassFailCounts": {
+				"Response is valid JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200 OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains required fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				226
+			],
+			"allTests": [
+				{
+					"Response is valid JSON": true,
+					"Status code is 200 OK": true,
+					"Response contains required fields": true
+				}
+			]
+		},
+		{
+			"id": "72ca024a-4b8b-4373-9e18-8d4c05043f44",
+			"name": "Flight Delay",
+			"url": "https://airlabs.co/api/v9/delays?delay=31&type=departures&api_key=YOUR-API-KEY",
+			"time": 113,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response object has expected keys": true,
+				"Alina test": true,
+				"Request object has expected keys": true,
+				"Client object has expected keys": true
+			},
+			"testPassFailCounts": {
+				"Response object has expected keys": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Alina test": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Request object has expected keys": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Client object has expected keys": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				113
+			],
+			"allTests": [
+				{
+					"Response object has expected keys": true,
+					"Alina test": true,
+					"Request object has expected keys": true,
+					"Client object has expected keys": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 498,
+	"collection": {
+		"requests": [
+			{
+				"id": "08a7c99f-af2c-441b-83c8-2966437918b5",
+				"method": "GET"
+			},
+			{
+				"id": "341cd5af-f1e3-4cfa-883f-c573b8c90694",
+				"method": "GET"
+			},
+			{
+				"id": "72ca024a-4b8b-4373-9e18-8d4c05043f44",
+				"method": "GET"
+			}
+		]
+	}
+}
