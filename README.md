@@ -8,7 +8,7 @@
 
 ##### Collection link: (https://github.com/AlinaRaluca92/tarom-postman/blob/main/Tarom.postman_collection.json)
 
-#### Get Flight Details
+#### 1.Get Flight Details
 
 ##### HTTP method for request: GET
 
@@ -30,6 +30,24 @@ Below you can find a picture of the API request from Postman:
 
 
 ![JavaScipt Tests](https://github.com/AlinaRaluca92/tarom-postman/blob/main/Java%20script%20test.JPG)
+
+####  2. Get Airport Details
+
+##### HTTP method for request: GET
+
+#####  Request description: 
+This request is used to retrieve details about a specific airport, such as its name, location, code, and facilities. According to the API documentation, this request requires the airport_code parameter to be included in the URL to specify the desired airport.
+
+#####  Test types / techniques used:
+
+Integration Testing: Ensuring that the request functions correctly within the application environment.
+
+Expected Testing: Verifying that all returned airport details align with the expected values stored in the database.
+
+Performance Testing: Measuring the server's response time to evaluate the request's performance.
+
+#####  Response status code: 200 OK
+
 
 
 
