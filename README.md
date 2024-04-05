@@ -8,6 +8,8 @@
 
 ##### Collection link: (https://github.com/AlinaRaluca92/tarom-postman/blob/main/Tarom.postman_collection.json)
 
+# Tests performed
+
 #### 1.Get Flight Details
 
 ##### HTTP method for request: GET
@@ -78,4 +80,23 @@ Below you can find a picture of the API request from Postman:
 ![](https://github.com/AlinaRaluca92/tarom-postman/blob/main/RP.JPG)
 
 # Execution report for the created API collection
+
+#####  Below you can find the execution report that was generated through the Postman collection runner.   
+
+![](https://github.com/AlinaRaluca92/tarom-postman/blob/main/execution%20report.JPG)
+
+# Defects found
+
+Defects that can be encountered in Postman while testing the Tarom application's API may vary based on the specific endpoints being tested and the complexity of the application. Here are some common types of defects that could be encountered:
+
+Incorrect Data: The API may return incorrect data for certain requests. This could include incorrect flight details, airport information, or delay status.
+
+Server Errors: The API might encounter server errors (5xx status codes) due to issues on the server-side, such as database connection problems or internal server failures.
+
+Missing Data: Some requests may return incomplete data or omit certain expected fields. This could result in missing information in the API response.
+
+# Conclusions
+
+In conclusion, while the Tarom application's API in Postman demonstrates adequate functionality and usability, there are areas for improvement to enhance reliability, performance, and user experience. By addressing these areas and diligently addressing identified defects, the Tarom application can better meet the needs of its users and provide a more seamless experience for accessing flight information.
+
 
