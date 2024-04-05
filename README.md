@@ -72,3 +72,7 @@ Error Handling Testing: Verifying that the system returns meaningful error messa
 #####  Response status code: 200 ok 
 
 
+Below you can find a picture of the API request from Postman:
+
+
+![](https://github.com/AlinaRaluca92/tarom-postman/blob/main/RP.JPG)
