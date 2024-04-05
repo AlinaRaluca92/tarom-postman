@@ -76,3 +76,6 @@ Below you can find a picture of the API request from Postman:
 
 
 ![](https://github.com/AlinaRaluca92/tarom-postman/blob/main/RP.JPG)
+
+# Execution report for the created API collection
+
