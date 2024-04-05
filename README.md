@@ -52,4 +52,6 @@ Below you can find a picture of the API request from Postman:
 
 ![](https://github.com/AlinaRaluca92/tarom-postman/blob/main/Request%20from%20Postman.JPG)
 
+![](https://github.com/AlinaRaluca92/tarom-postman/blob/main/test%20results.JPG)
+
 
