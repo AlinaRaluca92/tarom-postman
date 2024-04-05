@@ -48,6 +48,7 @@ Performance Testing: Measuring the server's response time to evaluate the reques
 
 #####  Response status code: 200 OK
 
+Below you can find a picture of the API request from Postman:
 
 
 
