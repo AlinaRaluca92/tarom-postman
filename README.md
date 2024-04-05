@@ -54,4 +54,21 @@ Below you can find a picture of the API request from Postman:
 
 ![](https://github.com/AlinaRaluca92/tarom-postman/blob/main/test%20results.JPG)
 
+####  3. Check Flight Delay
+
+#####  HTTP method for request: GET
+
+##### Request description: 
+This request is used to check if a specific flight is delayed. It takes the flight_number as a parameter to identify the flight for which delay information is requested.
+
+##### Test types / techniques used:
+
+Functional Testing: Verifying that the delay information returned is accurate and reflects the current status of the flight.
+
+Boundary Testing: Testing the request with various flight numbers, including valid and invalid ones, to ensure the system handles them appropriately.
+
+Error Handling Testing: Verifying that the system returns meaningful error messages for invalid inputs or when the requested flight information is not available.
+
+#####  Response status code: 200 ok 
+
 
