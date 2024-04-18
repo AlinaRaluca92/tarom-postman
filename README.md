@@ -6,7 +6,7 @@
 
 ##### Tools used: Postman, Newman
 
-##### Collection link: (https://github.com/AlinaRaluca92/tarom-postman/blob/main/Tarom.postman_collection.json)
+##### Collection [link](https://github.com/AlinaRaluca92/tarom-postman/blob/main/Tarom.postman_collection.json)
 
 # Tests performed
 
